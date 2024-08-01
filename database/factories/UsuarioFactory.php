@@ -22,7 +22,7 @@ class UsuarioFactory extends Factory
             'contra' => 'changeme', // contraseña encriptada
             'nombre' => $this->faker->name,
             'rol' => $this->faker->randomElement(['admin', 'empleado']),
-            'imagen' => 'https://www.forosperu.net/adjuntos/20181114_014719-png.126535/',
+            'imagen' => 'https://as1.ftcdn.net/v2/jpg/01/43/05/72/1000_F_143057292_0ny2vInfgFPaay7wWhzaMEWfbEHgfj4W.jpg',
             'created_at' => now(),
             'updated_at' => now(),
         ];
