@@ -15,11 +15,11 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'correo' => 'required',
+            'correo' => 'required|email|unique:usuarios,correo',
             'contra' => 'required|string',
             'nombre' => 'required|string|max:255',
             'rol' => 'required|string',
-            'imagen' => 'nullable',
+            'imagen' => 'nullable|url',
         ]);
 
         $usuario = new Usuario;
@@ -39,11 +39,11 @@ class UsuarioController extends Controller
     public function update(Request $request, Usuario $usuario)
     {
         $request->validate([
-            'correo' => 'required',
+            'correo' => 'required|email|unique:usuarios,correo,' . $usuario->id,
             'contra' => 'required|string',
             'nombre' => 'required|string|max:255',
             'rol' => 'required|string',
-            'imagen' => 'nullable',
+            'imagen' => 'nullable|url',
         ]);
 
         $usuario->correo = $request->correo;
